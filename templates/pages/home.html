@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{%block content%}
+
+<h1>The django project.</h1>
+
+{%for d in data%}
+
+<p>{{d.content}} : {{d.timestamp}}</p>
+
+{%endfor%}
+
+<form method="POST" id="ax">
+    {%csrf_token%}
+    <!-- {%for filed in form%}
+    {{filed}}
+    {%endfor%} -->
+    {{form.as_p}}
+
+    <input type="submit" value="SUBMIT STATUS">
+</form>
+
+{%endblock%}
+
+{%block script%}
+
+<script>
+
+
+    
+</script>
+
+{%endblock%}
